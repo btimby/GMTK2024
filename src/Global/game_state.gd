@@ -1,11 +1,15 @@
+class_name GlobalState
 extends Node
 
+const LEVELS: Array[PackedScene] = [
+	preload("res://Levels/Level0/level0.tscn"),
+]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+# Configrable variables
+@export var start_level: int = 0
 
+# Global signals
+signal damaged
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# Global state
+var level: int = start_level
