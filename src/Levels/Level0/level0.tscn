@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4jtvni05txtf"]
+[gd_scene load_steps=3 format=3 uid="uid://c4jtvni05txtf"]
 
 [ext_resource type="PackedScene" uid="uid://cg36c0fvvdmn7" path="res://Levels/BaseLevel/base_level.tscn" id="1_o3dwv"]
+[ext_resource type="PackedScene" uid="uid://caq4188cvkt5v" path="res://Entities/Cells/Mitochondria/mitochondria.tscn" id="2_upylc"]
 
 [node name="Level" instance=ExtResource("1_o3dwv")]
 
 [node name="Start" parent="." index="0"]
 position = Vector2(1090, 317)
+
+[node name="Mitochondria" parent="." index="1" instance=ExtResource("2_upylc")]
+position = Vector2(336, 470)
+
+[node name="Mitochondria2" parent="." index="2" instance=ExtResource("2_upylc")]
+position = Vector2(182, 288)
+
+[node name="Mitochondria3" parent="." index="3" instance=ExtResource("2_upylc")]
+position = Vector2(800, 50)
+
+[node name="Mitochondria4" parent="." index="4" instance=ExtResource("2_upylc")]
+position = Vector2(617, 555)
+
+[node name="Mitochondria5" parent="." index="5" instance=ExtResource("2_upylc")]
+position = Vector2(466, 144)

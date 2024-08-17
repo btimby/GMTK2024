@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const BRAIN: PackedScene = preload("res://Entities/Cells/Brain/brain.tscn")
 
@@ -9,7 +9,6 @@ const BRAIN: PackedScene = preload("res://Entities/Cells/Brain/brain.tscn")
 # Player state
 var energy: int = 100
 var cells: Array[BaseCell] = []
-
 var speed = 100
 
 func _ready():
