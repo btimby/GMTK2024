@@ -20,3 +20,31 @@ texture = ExtResource("1_efs0d")
 position = Vector2(0, 2.4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rs8qs")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="RigidBody2D"]
+emitting = false
+amount = 1500
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 264.0
+color = Color(0.975327, 0.394442, 0.231233, 1)
+hue_variation_min = 0.5
+hue_variation_max = 0.5
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="RigidBody2D"]
+emitting = false
+amount = 725
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 250.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.48236, 0.462319, 0.447548, 1)
