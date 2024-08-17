@@ -9,16 +9,78 @@
 position = Vector2(1090, 317)
 
 [node name="Mitochondria" parent="." index="1" instance=ExtResource("2_upylc")]
-position = Vector2(336, 470)
+position = Vector2(866, 312)
+mass = 1.0
+max_contacts_reported = 0
 
 [node name="Mitochondria2" parent="." index="2" instance=ExtResource("2_upylc")]
-position = Vector2(182, 288)
+position = Vector2(851, 406)
+mass = 1.0
+max_contacts_reported = 0
 
 [node name="Mitochondria3" parent="." index="3" instance=ExtResource("2_upylc")]
-position = Vector2(800, 50)
+position = Vector2(769, 314)
+mass = 1.0
+max_contacts_reported = 0
 
 [node name="Mitochondria4" parent="." index="4" instance=ExtResource("2_upylc")]
-position = Vector2(617, 555)
+position = Vector2(976, 317)
+mass = 1.0
+max_contacts_reported = 0
 
 [node name="Mitochondria5" parent="." index="5" instance=ExtResource("2_upylc")]
-position = Vector2(466, 144)
+position = Vector2(861, 219)
+mass = 1.0
+max_contacts_reported = 0
+
+[node name="Mitochondria6" parent="." index="6" instance=ExtResource("2_upylc")]
+position = Vector2(210, 573)
+mass = 1.0
+
+[node name="Mitochondria7" parent="." index="7" instance=ExtResource("2_upylc")]
+position = Vector2(220, 322)
+mass = 1.0
+
+[node name="Mitochondria8" parent="." index="8" instance=ExtResource("2_upylc")]
+position = Vector2(356, 95)
+mass = 1.0
+
+[node name="Mitochondria9" parent="." index="9" instance=ExtResource("2_upylc")]
+position = Vector2(94, 165)
+mass = 1.0
+
+[node name="Mitochondria10" parent="." index="10" instance=ExtResource("2_upylc")]
+position = Vector2(408, 457)
+mass = 1.0
+
+[node name="Mitochondria11" parent="." index="11" instance=ExtResource("2_upylc")]
+position = Vector2(493, 312)
+mass = 1.0
+
+[node name="Mitochondria12" parent="." index="12" instance=ExtResource("2_upylc")]
+position = Vector2(529, 98)
+mass = 1.0
+
+[node name="Mitochondria13" parent="." index="13" instance=ExtResource("2_upylc")]
+position = Vector2(1060, 165)
+mass = 1.0
+
+[node name="Mitochondria14" parent="." index="14" instance=ExtResource("2_upylc")]
+position = Vector2(1053, 487)
+mass = 1.0
+
+[node name="Mitochondria15" parent="." index="15" instance=ExtResource("2_upylc")]
+position = Vector2(593, 563)
+mass = 1.0
+
+[node name="Mitochondria16" parent="." index="16" instance=ExtResource("2_upylc")]
+position = Vector2(575, 440)
+mass = 1.0
+
+[node name="Mitochondria17" parent="." index="17" instance=ExtResource("2_upylc")]
+position = Vector2(623, 268)
+mass = 1.0
+
+[node name="Mitochondria18" parent="." index="18" instance=ExtResource("2_upylc")]
+position = Vector2(719, 131)
+mass = 1.0
