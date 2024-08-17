@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://cavhte35x8l24"]
+[gd_scene load_steps=4 format=3 uid="uid://cavhte35x8l24"]
+
+[ext_resource type="Script" path="res://Entities/Enemies/Bacteria/rigid_body_2d.gd" id="1_4bw23"]
+[ext_resource type="Texture2D" uid="uid://bbi8aq5yj1bkk" path="res://Entities/Enemies/Bacteria/bacteria_body.png" id="1_efs0d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rs8qs"]
+radius = 9.0
+height = 38.0
 
 [node name="Bacteria" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+script = ExtResource("1_4bw23")
+
+[node name="BacteriaBody" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_efs0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 2.4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rs8qs")
