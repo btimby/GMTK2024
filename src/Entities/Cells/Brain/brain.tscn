@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce6ux0vt7qd8j"]
+
+[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/cell.tscn" id="1_vybmq"]
+
+[node name="Cell" instance=ExtResource("1_vybmq")]

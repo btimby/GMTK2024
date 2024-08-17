@@ -5,14 +5,14 @@ var current_level: Node = null
 
 @onready var player: Node = player_scene.instantiate()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	self._load_level(GameState.level)
-	self.add_child(self.player)
+	self.current_level.add_child(self.player)
+	self.player.position = self.current_level.get_node("Start").position
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _input(event):
+	if event.is_action_pressed('ui_cancel'):
+		self.get_tree().quit()
 
 func _load_level(num: int):
 	if self.current_level:
