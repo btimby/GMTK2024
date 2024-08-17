@@ -18,25 +18,25 @@ texture = ExtResource("2_8pmad")
 [node name="Node2D" type="Node2D" parent="." index="3"]
 
 [node name="AttachmentPoint" parent="Node2D" index="0" instance=ExtResource("3_1w4el")]
-position = Vector2(0, -42)
+position = Vector2(0, -35)
 
 [node name="AttachmentPoint2" parent="Node2D" index="1" instance=ExtResource("3_1w4el")]
-position = Vector2(33, -27)
+position = Vector2(26, -21)
 
 [node name="AttachmentPoint3" parent="Node2D" index="2" instance=ExtResource("3_1w4el")]
-position = Vector2(44, 0)
+position = Vector2(34, 1)
 
 [node name="AttachmentPoint4" parent="Node2D" index="3" instance=ExtResource("3_1w4el")]
-position = Vector2(33, 28)
+position = Vector2(27, 24)
 
 [node name="AttachmentPoint5" parent="Node2D" index="4" instance=ExtResource("3_1w4el")]
-position = Vector2(-1, 41)
+position = Vector2(0, 34)
 
 [node name="AttachmentPoint6" parent="Node2D" index="5" instance=ExtResource("3_1w4el")]
-position = Vector2(-32, 28)
+position = Vector2(-26, 23)
 
 [node name="AttachmentPoint7" parent="Node2D" index="6" instance=ExtResource("3_1w4el")]
-position = Vector2(-41, 0)
+position = Vector2(-33, -1)
 
 [node name="AttachmentPoint8" parent="Node2D" index="7" instance=ExtResource("3_1w4el")]
-position = Vector2(-30, -29)
+position = Vector2(-25, -23)

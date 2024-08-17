@@ -4,35 +4,30 @@ class_name AttachmentPoint extends Node2D
 @onready var collision_shape: CollisionShape2D = get_node("Area2D/CollisionShape2D")
 @onready var cell: Node2D = get_parent().get_parent()
 
-var disabled: bool = false
 var pair: AttachmentPoint = null
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print('Attachment: %s<->%s' % [self, area])
 	var ap: AttachmentPoint = area.get_parent()
-	if not self.attach(ap):
+	if self.is_attached():
 		return
-	if not ap.attach(self):
-		return
-	var player: Node2D
-	var cell: BaseCell
+	# this event can fire with either player or cell area as the parameter.
 	if self.cell.get_parent().has_method('add_cell'):
-		player = self.cell.get_parent()
-		cell = ap.cell
-	else:
-		player = ap.cell.get_parent()
-		cell = self.cell
-	player.add_cell(cell, cell.global_position - player.global_position)
+		var player = self.cell.get_parent()
+		player.add_cell(self, ap)
+		self.attach(ap)
+	if ap.cell.get_parent().has_method('add_cell'):
+		var player = ap.cell.get_parent()
+		player.add_cell(ap, self)
+		self.attach(ap)
 
-func disable() -> bool:
-	var was_disabled: bool = self.disabled
-	self.disabled = true
-	self.area.collision_layer = 16
-	self.collision_shape.disabled = true
-	return was_disabled
+func is_attached() -> bool:
+	return self.pair != null
 
 func attach(ap: AttachmentPoint) -> bool:
 	if self.pair:
 		return false
 	self.pair = ap
+	self.area.set_deferred('collision_layer', 16)
+	self.collision_shape.set_deferred('disabled', true)
+	ap.attach(self)
 	return true

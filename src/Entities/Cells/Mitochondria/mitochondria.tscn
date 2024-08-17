@@ -6,12 +6,11 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l7etn"]
 radius = 14.14
-height = 63.5559
+height = 54.0
 
 [node name="Mitochondria" instance=ExtResource("1_v5itc")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="0"]
-rotation = 0.767945
 shape = SubResource("CapsuleShape2D_l7etn")
 
 [node name="Wall" parent="." index="1"]
@@ -20,7 +19,7 @@ texture = ExtResource("2_la7ga")
 [node name="Node2D" type="Node2D" parent="." index="3"]
 
 [node name="AttachmentPoint" parent="Node2D" index="0" instance=ExtResource("3_s7ig1")]
-position = Vector2(29, -30)
+position = Vector2(0, -29)
 
 [node name="AttachmentPoint2" parent="Node2D" index="1" instance=ExtResource("3_s7ig1")]
-position = Vector2(-30, 29)
+position = Vector2(0, 28)
