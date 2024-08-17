@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce6ux0vt7qd8j"]
+[gd_scene load_steps=3 format=3 uid="uid://ce6ux0vt7qd8j"]
 
-[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/cell.tscn" id="1_vybmq"]
+[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/Cell/cell.tscn" id="1_vybmq"]
+[ext_resource type="Texture2D" uid="uid://bshao3ctcde0o" path="res://Entities/Cells/Brain/Assets/brain.png" id="2_oewqk"]
 
-[node name="Cell" instance=ExtResource("1_vybmq")]
+[node name="Brain" instance=ExtResource("1_vybmq")]
+
+[node name="Type" parent="." index="1"]
+texture = ExtResource("2_oewqk")
