@@ -1,4 +1,4 @@
-class_name Cell extends Node2D
+class_name BaseCell extends Node2D
 
 func _ready():
 	pass

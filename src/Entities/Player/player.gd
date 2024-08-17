@@ -8,7 +8,7 @@ const BRAIN: PackedScene = preload("res://Entities/Cells/Brain/brain.tscn")
 
 # Player state
 var energy: int = 100
-var cells: Array[Cell] = []
+var cells: Array[BaseCell] = []
 
 var speed = 100
 
