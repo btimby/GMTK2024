@@ -9,6 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move_and_collide(
-			to_global(Vector2(1,0))-to_global(Vector2(0,0))
+			to_global(Vector2(0.5,0))-to_global(Vector2(0,0))
 		)
 	rotate((randf()-0.5)/25)
