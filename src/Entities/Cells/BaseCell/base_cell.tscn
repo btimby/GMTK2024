@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Entities/Cells/BaseCell/base_cell.gd" id="1_xs0m5"]
 [ext_resource type="Texture2D" uid="uid://c2xnjs4hbd2cd" path="res://Entities/Cells/BaseCell/Assets/cell_wall.png" id="3_7241c"]
 
-[node name="Cell" type="Node2D"]
+[node name="Cell" type="RigidBody2D"]
 script = ExtResource("1_xs0m5")
 
 [node name="Wall" type="Sprite2D" parent="."]
