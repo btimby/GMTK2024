@@ -15,6 +15,7 @@ const SWIM_ANIMATIONS = {
 
 @onready var cell_scene: PackedScene = preload("res://Entities/Cells/BaseCell/base_cell.tscn")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 var energy: int = 0 :
 	set(value):
@@ -28,6 +29,7 @@ var next_growth: int = 100 :
 		next_growth = value
 		GameState.next_growth_changed.emit(value)
 
+var growing: bool = false
 var cells: Array[BaseCell] = []
 
 func _ready():
@@ -35,13 +37,15 @@ func _ready():
 	self.animation_player.current_animation = 'Idle'
 
 func _swim_animation(direction: Vector2) -> void:
+	if self.growing:
+		return
+
 	if direction == Vector2.ZERO:
 		self.animation_player.current_animation = 'Idle'
 		return
 
 	var angle: float = snappedf(direction.angle(), PI/4) / (PI/4)
 	var octant: int = wrapi(int(angle), 0, 8)
-	print(octant)
 	self.animation_player.current_animation = SWIM_ANIMATIONS.get(octant, 'Idle')
 
 func _physics_process(delta: float) -> void:
@@ -51,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	self.apply_force(velocity)
 	self._swim_animation(direction)
 
-func _grow() -> void:
+func _add_cell() -> void:
 	var cell: BaseCell = cell_scene.instantiate()
 	self.get_parent().add_child(cell)
 	cell.position = self.position + Vector2(104, 0)
@@ -60,5 +64,18 @@ func _grow() -> void:
 	pin.node_b = cell.get_path()
 	self.add_child(pin)
 	self.cells.append(cell)
+
+func _grow() -> void:
+	self.growing = true
+	print(self.get_shape_owners())
+	var margin: CollisionShape2D = CollisionShape2D.new()
+	var shape: CircleShape2D = CircleShape2D.new()
+	shape.radius = 112
+	margin.shape = shape
+	self.add_child(margin)
 	self.energy = self.energy - self.next_growth
 	self.next_growth *= 1.2
+	self.animation_player.current_animation = 'PreGrow'
+	await self.animation_player.animation_finished
+	self.growing = false
+	self.remove_child(margin)
