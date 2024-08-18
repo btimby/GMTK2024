@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2xnjs4hbd2cd"
-path="res://.godot/imported/cell_wall.png-8f61873fdd3812e48d50fc10ef2e4d3d.ctex"
+path="res://.godot/imported/cell_wall.png-7280047773d7610188ca6e14be071d97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Cells/BaseCell/Assets/cell_wall.png"
-dest_files=["res://.godot/imported/cell_wall.png-8f61873fdd3812e48d50fc10ef2e4d3d.ctex"]
+source_file="res://Entities/Cells/RoundCell/Assets/cell_wall.png"
+dest_files=["res://.godot/imported/cell_wall.png-7280047773d7610188ca6e14be071d97.ctex"]
 
 [params]
 

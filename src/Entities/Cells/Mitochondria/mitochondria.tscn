@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://caq4188cvkt5v"]
 
-[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/BaseCell/base_cell.tscn" id="1_v5itc"]
+[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/RoundCell/base_cell.tscn" id="1_v5itc"]
 [ext_resource type="Texture2D" uid="uid://cwojiywstwdiu" path="res://Entities/Cells/Mitochondria/Assets/mitochondria.png" id="2_la7ga"]
-[ext_resource type="PackedScene" uid="uid://cqbu2jm37syo3" path="res://Entities/Cells/AttachmentPoint/attachment_point.tscn" id="3_s7ig1"]
+[ext_resource type="PackedScene" path="res://Entities/Cells/AttachmentPoint/attachment_point.tscn" id="3_s7ig1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l7etn"]
 radius = 14.14

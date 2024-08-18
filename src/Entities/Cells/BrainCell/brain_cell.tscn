@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbb4xntx5dwj5"]
 
-[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/BaseCell/base_cell.tscn" id="1_fxcw4"]
+[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/RoundCell/base_cell.tscn" id="1_fxcw4"]
 [ext_resource type="Texture2D" uid="uid://bshao3ctcde0o" path="res://Entities/Cells/BrainCell/Assets/brain.png" id="2_8pmad"]
-[ext_resource type="PackedScene" uid="uid://cqbu2jm37syo3" path="res://Entities/Cells/AttachmentPoint/attachment_point.tscn" id="3_1w4el"]
+[ext_resource type="PackedScene" path="res://Entities/Cells/AttachmentPoint/attachment_point.tscn" id="3_1w4el"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5prxr"]
 radius = 32.0
