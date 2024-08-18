@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfxxjv2qf5mba"]
+[gd_scene load_steps=3 format=3 uid="uid://dfxxjv2qf5mba"]
 
 [ext_resource type="Script" path="res://Global/main.gd" id="1_stbch"]
+[ext_resource type="PackedScene" uid="uid://dpy6hcsxuwgj5" path="res://UI/EnergyBar/energy_bar.tscn" id="2_sdymj"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_stbch")
+
+[node name="EnergyBar" parent="." instance=ExtResource("2_sdymj")]
+position = Vector2(9, 6)

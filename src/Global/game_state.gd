@@ -9,7 +9,8 @@ const LEVELS: Array[PackedScene] = [
 @export var start_level: int = 0
 
 # Global signals
-signal damaged
+signal energy_changed
+signal next_growth_changed
 
 # Global state
 var level: int = start_level

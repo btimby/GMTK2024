@@ -1,9 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://whpjmwl67mr5"]
+[gd_scene load_steps=18 format=3 uid="uid://whpjmwl67mr5"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_kex5a"]
-[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/RoundCell/base_cell.tscn" id="1_qydos"]
 [ext_resource type="Texture2D" uid="uid://dbfr7fqvdc77a" path="res://Entities/Player/Assets/cell_wall.png" id="3_0noim"]
 [ext_resource type="PackedScene" uid="uid://c4fulvnw3bqsp" path="res://Entities/Camera/camera.tscn" id="3_rexji"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dueqp"]
+friction = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwhqo"]
+radius = 55.7315
 
 [sub_resource type="Animation" id="Animation_6mqdy"]
 resource_name = "Pulse"
@@ -480,45 +485,53 @@ _data = {
 "Swim7": SubResource("Animation_ofolo")
 }
 
-[node name="Player" instance=ExtResource("1_qydos")]
+[node name="Player" type="RigidBody2D"]
 scale = Vector2(1.2, 1.2)
+physics_material_override = SubResource("PhysicsMaterial_dueqp")
 script = ExtResource("1_kex5a")
 speed = 300
 
-[node name="Polygon2D" parent="Body" index="0"]
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Body"]
+position = Vector2(-64, -64)
 texture = ExtResource("3_0noim")
+skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(64.22, 7.0456, 79.6329, 7.92633, 91.9631, 12.1832, 101.211, 18.9355, 110.165, 27.4493, 117.504, 38.8988, 122.055, 51.2291, 124.257, 64.1465, 121.908, 77.3575, 117.945, 88.6603, 111.192, 99.3759, 103.119, 107.596, 93.5778, 114.055, 80.0732, 118.752, 64.22, 120.367, 49.5411, 118.605, 38.2383, 115.229, 26.0549, 106.715, 16.8072, 97.4676, 9.46771, 85.4309, 6.09156, 73.2474, 5.35762, 64.1465, 6.67872, 52.2566, 10.7888, 39.1924, 18.7154, 27.8896, 27.0824, 18.7887, 39.7062, 11.7428, 50.7154, 7.77954, 64.2779, 40.2105, 64.1293, 88.2247, 40.0478, 63.9946, 90.8864, 63.9946, 49.5615, 46.7511, 81.0755, 50.1701, 80.4809, 78.5624, 47.7777, 78.2651)
 uv = PackedVector2Array(64.22, 7.0456, 79.6329, 7.92633, 91.9631, 12.1832, 101.211, 18.9355, 110.165, 27.4493, 117.504, 38.8988, 122.055, 51.2291, 124.257, 64.1465, 121.908, 77.3575, 117.945, 88.6603, 111.192, 99.3759, 103.119, 107.596, 93.5778, 114.055, 80.0732, 118.752, 64.22, 120.367, 49.5411, 118.605, 38.2383, 115.229, 26.0549, 106.715, 16.8072, 97.4676, 9.46771, 85.4309, 6.09156, 73.2474, 5.35762, 64.1465, 6.67872, 52.2566, 10.7888, 39.1924, 18.7154, 27.8896, 27.0824, 18.7887, 39.7062, 11.7428, 50.7154, 7.77954, 64.2779, 40.2105, 64.1293, 88.2247, 40.0478, 63.9946, 90.8864, 63.9946, 49.5615, 46.7511, 81.0755, 50.1701, 80.4809, 78.5624, 47.7777, 78.2651)
 polygons = [PackedInt32Array(26, 28, 27), PackedInt32Array(26, 28, 32), PackedInt32Array(26, 25, 32), PackedInt32Array(32, 24, 25), PackedInt32Array(32, 23, 24), PackedInt32Array(32, 30, 23), PackedInt32Array(30, 22, 23), PackedInt32Array(21, 22, 30), PackedInt32Array(20, 21, 30), PackedInt32Array(20, 19, 30), PackedInt32Array(30, 35, 19), PackedInt32Array(35, 18, 19), PackedInt32Array(35, 17, 18), PackedInt32Array(35, 16, 17), PackedInt32Array(35, 29, 16), PackedInt32Array(29, 15, 16), PackedInt32Array(29, 14, 15), PackedInt32Array(29, 13, 14), PackedInt32Array(29, 34, 13), PackedInt32Array(34, 13, 12), PackedInt32Array(34, 11, 12), PackedInt32Array(34, 10, 11), PackedInt32Array(34, 31, 10), PackedInt32Array(31, 9, 10), PackedInt32Array(31, 8, 9), PackedInt32Array(31, 7, 8), PackedInt32Array(31, 6, 7), PackedInt32Array(31, 33, 6), PackedInt32Array(33, 5, 6), PackedInt32Array(33, 5, 4), PackedInt32Array(33, 3, 4), PackedInt32Array(33, 2, 3), PackedInt32Array(33, 28, 2), PackedInt32Array(28, 2, 1), PackedInt32Array(28, 0, 1), PackedInt32Array(28, 27, 0), PackedInt32Array(28, 32, 30, 35, 29, 34, 31, 33)]
 bones = ["Root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Root/Left", PackedFloat32Array(0.29, 0.29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.29, 0.29, 0.29, 0.63, 0.63, 0.63, 0.63, 0.8, 1, 0.8, 0.63, 0.63, 0.63, 0.63, 0.29, 0, 0, 1, 0, 1, 0, 0, 1), "Root/Up", PackedFloat32Array(1, 0.83, 0.68, 0.68, 0.68, 0.68, 0.22, 0.22, 0.31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.31, 0.22, 0.22, 0.68, 0.68, 0.68, 0.68, 0.83, 1, 0, 0, 0, 1, 1, 0, 0), "Root/Right", PackedFloat32Array(0.31, 0.31, 0.61, 0.61, 0.61, 0.61, 0.81, 1, 0.81, 0.61, 0.61, 0.61, 0.61, 0.31, 0.31, 0.56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.31, 0, 0, 0, 1, 0, 1, 1, 0), "Root/Down", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.31, 0.31, 0.31, 1, 1, 1, 1, 0.75, 1, 0.75, 1, 1, 1, 1, 0.31, 0.31, 0.31, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1)]
 internal_vertex_count = 8
 
-[node name="Root" type="Bone2D" parent="Body/Skeleton2D" index="0"]
+[node name="Skeleton2D" type="Skeleton2D" parent="Body"]
+
+[node name="Root" type="Bone2D" parent="Body/Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
-[node name="Left" type="Bone2D" parent="Body/Skeleton2D/Root" index="0"]
+[node name="Left" type="Bone2D" parent="Body/Skeleton2D/Root"]
 position = Vector2(-55, 1)
 rest = Transform2D(1, 0, 0, 1, -55, 0)
 
-[node name="Up" type="Bone2D" parent="Body/Skeleton2D/Root" index="1"]
+[node name="Up" type="Bone2D" parent="Body/Skeleton2D/Root"]
 position = Vector2(1, -53)
 rest = Transform2D(1, 0, 0, 1, 0, -53)
 
-[node name="Right" type="Bone2D" parent="Body/Skeleton2D/Root" index="2"]
+[node name="Right" type="Bone2D" parent="Body/Skeleton2D/Root"]
 position = Vector2(56, 1)
 rest = Transform2D(1, 0, 0, 1, 56, 0)
 
-[node name="Down" type="Bone2D" parent="Body/Skeleton2D/Root" index="3"]
+[node name="Down" type="Bone2D" parent="Body/Skeleton2D/Root"]
 position = Vector2(1, 53)
 rest = Transform2D(1, 0, 0, 1, 0, 53)
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_pwhqo")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_rexji")]
 visible = false
 
-[node name="Camera2D" parent="." index="2" instance=ExtResource("3_rexji")]
-visible = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_uo7u7")
 }

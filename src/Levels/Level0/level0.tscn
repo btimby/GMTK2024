@@ -49,3 +49,57 @@ position = Vector2(444, 365)
 texture = ExtResource("5_gwxc0")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+
+[node name="Energy" parent="." index="7" instance=ExtResource("7_jiikg")]
+position = Vector2(323, 338)
+
+[node name="Energy2" parent="." index="8" instance=ExtResource("7_jiikg")]
+position = Vector2(560, 539)
+
+[node name="Energy3" parent="." index="9" instance=ExtResource("7_jiikg")]
+position = Vector2(642, 129)
+
+[node name="Energy4" parent="." index="10" instance=ExtResource("7_jiikg")]
+position = Vector2(648, 333)
+
+[node name="Energy5" parent="." index="11" instance=ExtResource("7_jiikg")]
+position = Vector2(741, 477)
+
+[node name="Energy6" parent="." index="12" instance=ExtResource("7_jiikg")]
+position = Vector2(473, 152)
+
+[node name="Energy7" parent="." index="13" instance=ExtResource("7_jiikg")]
+position = Vector2(125, 514)
+
+[node name="Energy8" parent="." index="14" instance=ExtResource("7_jiikg")]
+position = Vector2(147, 296)
+
+[node name="Energy9" parent="." index="15" instance=ExtResource("7_jiikg")]
+position = Vector2(145, 95)
+
+[node name="Energy10" parent="." index="16" instance=ExtResource("7_jiikg")]
+position = Vector2(965, 398)
+
+[node name="Energy11" parent="." index="17" instance=ExtResource("7_jiikg")]
+position = Vector2(996, 177)
+
+[node name="Energy12" parent="." index="18" instance=ExtResource("7_jiikg")]
+position = Vector2(812, 296)
+
+[node name="Energy13" parent="." index="19" instance=ExtResource("7_jiikg")]
+position = Vector2(770, 143)
+
+[node name="Energy14" parent="." index="20" instance=ExtResource("7_jiikg")]
+position = Vector2(490, 389)
+
+[node name="Energy15" parent="." index="21" instance=ExtResource("7_jiikg")]
+position = Vector2(444, 254)
+
+[node name="Energy16" parent="." index="22" instance=ExtResource("7_jiikg")]
+position = Vector2(411, 491)
+
+[node name="Energy17" parent="." index="23" instance=ExtResource("7_jiikg")]
+position = Vector2(368, 58)
+
+[node name="Energy18" parent="." index="24" instance=ExtResource("7_jiikg")]
+position = Vector2(798, 24)

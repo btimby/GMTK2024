@@ -1,0 +1,1 @@
+class_name BaseCell extends RigidBody2D

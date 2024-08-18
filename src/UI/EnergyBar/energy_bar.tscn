@@ -1,26 +1,18 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpy6hcsxuwgj5"]
 
-[ext_resource type="Script" path="res://UI/EnergyBar/Label.gd" id="1_uyw3l"]
+[ext_resource type="Script" path="res://UI/EnergyBar/energy_bar.gd" id="1_77b47"]
 
-[node name="EnergyBar" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="EnergyBar" type="Node2D"]
+script = ExtResource("1_77b47")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 278.0
-offset_right = 1151.0
-offset_bottom = 26.0
-horizontal_alignment = 1
-script = ExtResource("1_uyw3l")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="Label"]
-layout_mode = 0
-offset_right = 875.0
-offset_bottom = 27.0
-fill_mode = 1
-show_percentage = false
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.154
+anchor_bottom = 0.129
+offset_left = 32.0
+offset_top = 8.0
+offset_right = -45.408
+offset_bottom = -55.592
+value = 30.0

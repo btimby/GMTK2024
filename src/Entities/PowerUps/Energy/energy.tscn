@@ -2,10 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://c84to78u2h6u2" path="res://Entities/PowerUps/BasePowerUp/base_powerup.tscn" id="1_02o55"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vlbuo"]
-radius = 9.05539
+[sub_resource type="CircleShape2D" id="CircleShape2D_716yd"]
 
 [node name="Energy" instance=ExtResource("1_02o55")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_vlbuo")
+[node name="Effect" parent="." index="1" node_paths=PackedStringArray("target_area")]
+target_area = NodePath("../Area2D")
+give_energy = 20
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_716yd")

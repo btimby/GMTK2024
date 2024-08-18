@@ -1,14 +1,13 @@
 extends Node2D
 
-var player_scene: PackedScene = preload("res://Entities/Player/player.tscn")
 var current_level: Node = null
-
-@onready var player: Node = player_scene.instantiate()
 
 func _ready():
 	self._load_level(GameState.level)
-	self.current_level.add_child(self.player)
-	self.player.position = self.current_level.get_node("Start").position
+	var player_scene: PackedScene = preload("res://Entities/Player/player.tscn")
+	var player: Node2D = player_scene.instantiate()
+	player.position = self.current_level.get_node("Start").position
+	self.current_level.add_child(player)
 
 func _input(event):
 	if event.is_action_pressed('ui_cancel'):
