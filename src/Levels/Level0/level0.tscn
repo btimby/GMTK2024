@@ -25,71 +25,39 @@ position = Vector2(861, 219)
 
 [node name="Mitochondria6" parent="." index="6" instance=ExtResource("2_upylc")]
 position = Vector2(210, 573)
-max_contacts_reported = 4
 
 [node name="Mitochondria7" parent="." index="7" instance=ExtResource("2_upylc")]
 position = Vector2(220, 322)
-max_contacts_reported = 4
 
 [node name="Mitochondria8" parent="." index="8" instance=ExtResource("2_upylc")]
 position = Vector2(356, 95)
-max_contacts_reported = 4
 
 [node name="Mitochondria9" parent="." index="9" instance=ExtResource("2_upylc")]
 position = Vector2(94, 165)
-max_contacts_reported = 4
 
 [node name="Mitochondria10" parent="." index="10" instance=ExtResource("2_upylc")]
 position = Vector2(408, 457)
-max_contacts_reported = 4
 
 [node name="Mitochondria11" parent="." index="11" instance=ExtResource("2_upylc")]
 position = Vector2(493, 312)
-max_contacts_reported = 4
 
 [node name="Mitochondria12" parent="." index="12" instance=ExtResource("2_upylc")]
 position = Vector2(529, 98)
-max_contacts_reported = 4
 
 [node name="Mitochondria13" parent="." index="13" instance=ExtResource("2_upylc")]
 position = Vector2(1060, 165)
-max_contacts_reported = 4
 
 [node name="Mitochondria14" parent="." index="14" instance=ExtResource("2_upylc")]
 position = Vector2(1053, 487)
-max_contacts_reported = 4
 
 [node name="Mitochondria15" parent="." index="15" instance=ExtResource("2_upylc")]
 position = Vector2(593, 563)
-max_contacts_reported = 4
 
 [node name="Mitochondria16" parent="." index="16" instance=ExtResource("2_upylc")]
 position = Vector2(575, 440)
-max_contacts_reported = 4
 
 [node name="Mitochondria17" parent="." index="17" instance=ExtResource("2_upylc")]
 position = Vector2(623, 268)
-max_contacts_reported = 4
 
 [node name="Mitochondria18" parent="." index="18" instance=ExtResource("2_upylc")]
 position = Vector2(719, 131)
-max_contacts_reported = 4
-
-[connection signal="body_entered" from="Mitochondria" to="Mitochondria" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria2" to="Mitochondria2" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria3" to="Mitochondria3" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria4" to="Mitochondria4" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria5" to="Mitochondria5" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria6" to="Mitochondria6" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria7" to="Mitochondria7" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria8" to="Mitochondria8" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria9" to="Mitochondria9" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria10" to="Mitochondria10" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria11" to="Mitochondria11" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria12" to="Mitochondria12" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria13" to="Mitochondria13" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria14" to="Mitochondria14" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria15" to="Mitochondria15" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria16" to="Mitochondria16" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria17" to="Mitochondria17" method="_on_body_entered"]
-[connection signal="body_entered" from="Mitochondria18" to="Mitochondria18" method="_on_body_entered"]

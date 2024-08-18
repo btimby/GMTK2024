@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://blemua73fb188"]
+[gd_scene load_steps=4 format=3 uid="uid://whpjmwl67mr5"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_kex5a"]
+[ext_resource type="PackedScene" uid="uid://bh03yk6xvp43l" path="res://Entities/Cells/BaseCell/base_cell.tscn" id="1_qydos"]
+[ext_resource type="PackedScene" uid="uid://c4fulvnw3bqsp" path="res://Entities/Camera/camera.tscn" id="3_rexji"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" instance=ExtResource("1_qydos")]
 script = ExtResource("1_kex5a")
+speed = 2400
+
+[node name="Camera2D" parent="." index="2" instance=ExtResource("3_rexji")]
