@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba1dfw1kavie7"]
+
+[ext_resource type="PackedScene" uid="uid://c84to78u2h6u2" path="res://Entities/PowerUps/BasePowerUp/base_powerup.tscn" id="1_02o55"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlbuo"]
+radius = 9.05539
+
+[node name="Energy" instance=ExtResource("1_02o55")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_vlbuo")
