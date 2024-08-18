@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4jtvni05txtf"]
+[gd_scene load_steps=8 format=3 uid="uid://c4jtvni05txtf"]
 
 [ext_resource type="PackedScene" uid="uid://cg36c0fvvdmn7" path="res://Levels/BaseLevel/base_level.tscn" id="1_o3dwv"]
 [ext_resource type="PackedScene" uid="uid://caq4188cvkt5v" path="res://Entities/Cells/Mitochondria/mitochondria.tscn" id="2_upylc"]
 [ext_resource type="Script" path="res://Levels/Level0/parallax_background.gd" id="3_7vspa"]
 [ext_resource type="Texture2D" uid="uid://dd3bbkg8javb1" path="res://Levels/Level0/Untitled.png" id="4_p0n5c"]
 [ext_resource type="Texture2D" uid="uid://dcblmulp2ffgb" path="res://Levels/Level0/bubbles.png" id="5_gwxc0"]
+[ext_resource type="AudioStream" uid="uid://b013xl05vd7sb" path="res://Music/Fresh Decision C Minor 120bpm.wav" id="6_b735i"]
+[ext_resource type="Script" path="res://Levels/Level0/audio_stream_player.gd" id="7_5lqlq"]
 
 [node name="Level" instance=ExtResource("1_o3dwv")]
 
@@ -82,3 +84,8 @@ position = Vector2(444, 365)
 texture = ExtResource("5_gwxc0")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="20"]
+stream = ExtResource("6_b735i")
+autoplay = true
+script = ExtResource("7_5lqlq")
