@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6wvf6h4pdrhb"]
+
+[ext_resource type="Script" path="res://Levels/Level1/level1.gd" id="1_x7qn3"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("start")]
+script = ExtResource("1_x7qn3")
+start = NodePath("Start")
+
+[node name="Start" type="Node2D" parent="."]
+position = Vector2(110, 310)

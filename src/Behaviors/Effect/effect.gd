@@ -10,9 +10,9 @@ func _ready() -> void:
 	self.target_area.body_entered.connect(self._on_body_entered)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is not Player:
+	if body is not BaseCell:
 		return
-	var player: Player = body
+	var cell: BaseCell = body
 	if self.give_energy:
-		player.energy += self.give_energy
+		cell.add_energy(self.give_energy)
 	self.get_parent().queue_free()

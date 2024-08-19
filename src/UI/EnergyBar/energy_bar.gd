@@ -4,7 +4,7 @@ class_name EnergyBar extends Node2D
 
 func _ready() -> void:
 	GameState.energy_changed.connect(self._on_energy_changed)
-	GameState.next_growth_changed.connect(self._on_next_growth_changed)
+	GameState.after_growth.connect(self._on_next_growth_changed)
 
 func _on_energy_changed(value: int) -> void:
 	self.progress_bar.value = value
