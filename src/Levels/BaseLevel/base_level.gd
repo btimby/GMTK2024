@@ -13,7 +13,8 @@ func create_player() -> Player:
 	if new_coords == Vector2.INF:
 		push_error("Could not locate player slot in %s blueprint" % self.name)
 		return null
-	self.player = Player.Create(self, new_coords, new_position)
+	self.player = Player.Create(new_coords)
 	self.add_child(self.player)
+	self.player.position = new_position
 	self.organism.insert(new_coords, self.player)
 	return self.player

@@ -64,78 +64,66 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_uvf1i"]
 resource_name = "PreGrow"
-length = 2.0
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath("Body/Skeleton2D/Root/Left:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.22, 0.34, 0.5, 0.58, 0.7, 1, 1.56, 1.65, 1.89),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.0775, 1.0775), Vector2(0.9, 0.9), Vector2(1.12251, 1.12251), Vector2(1, 1), Vector2(1.26103, 1.26103), Vector2(1.1, 1.1), Vector2(1.82632, 1.82632), Vector2(1.4, 1.4), Vector2(2, 2)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Skeleton2D/Root/Left:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.65, 1.07, 1.23, 1.4, 1.56, 1.69, 1.76),
+"times": PackedFloat32Array(0, 0.1, 0.39, 0.55, 0.64, 0.7, 0.74, 0.84, 0.92, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-55, 0), Vector2(-57.0071, -10.4513), Vector2(-64.1772, 10.8608), Vector2(-51.503, 8.04734), Vector2(-53.3708, -15.6554), Vector2(-80.5654, 12.7562), Vector2(-86.7667, -6.96667), Vector2(-53.3708, -15.6554), Vector2(-86.7667, -6.96667), Vector2(-80.5654, 12.7562)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Skeleton2D/Root/Up:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.65, 1.07, 1.23, 1.4, 1.56, 1.69, 1.76),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Skeleton2D/Root/Up:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.39, 0.55, 0.64, 0.7, 0.74, 0.84, 0.92, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -53), Vector2(3.94937, -61.2152), Vector2(20.1183, -70.8166), Vector2(-13.5206, -71.161), Vector2(7.38516, -71.8375), Vector2(-11.4, -74.1), Vector2(-13.5206, -71.161), Vector2(-11.4, -74.1), Vector2(7.38516, -71.8375)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/Skeleton2D/Root/Right:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.65, 1.07, 1.23, 1.4, 1.56, 1.69, 1.76),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Skeleton2D/Root/Right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.39, 0.55, 0.64, 0.7, 0.74, 0.84, 0.92, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(56, 0), Vector2(59.8575, -3.80047), Vector2(59.8575, -3.80048), Vector2(87.716, -5.63314), Vector2(85.3933, 8.53933), Vector2(84.5936, -9.39929), Vector2(82.3333, -19.6333), Vector2(85.3933, 8.53933), Vector2(82.3333, -19.6333), Vector2(84.5936, -9.39929)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Skeleton2D/Root/Down:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.65, 1.07, 1.23, 1.4, 1.56, 1.69, 1.76),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Skeleton2D/Root/Down:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.39, 0.55, 0.64, 0.7, 0.74, 0.84, 0.92, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 53), Vector2(7.60095, 53.2066), Vector2(-4.93671, 60.2278), Vector2(13.6805, 82.8876), Vector2(-7.82771, 86.8165), Vector2(10.0707, 88.6219), Vector2(-8.86666, 88.6667), Vector2(-7.82771, 86.8165), Vector2(-8.86666, 88.6667), Vector2(10.0707, 88.6219)]
 }
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CollisionShape2D")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Polygon2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.34, 0.41, 0.44, 0.47, 0.6, 0.69, 0.78, 0.87, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.0775, 1.0775), Vector2(0.9, 0.9), Vector2(1.12251, 1.12251), Vector2(1, 1), Vector2(1.26103, 1.26103), Vector2(1.1, 1.1), Vector2(1.82632, 1.82632), Vector2(1.4, 1.4), Vector2(2, 2), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_6mqdy"]
@@ -159,62 +147,62 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath("Body/Skeleton2D/Root/Left:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1.2, 1.2)]
+"values": [Vector2(-55, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Skeleton2D/Root/Left:position")
+tracks/1/path = NodePath("Body/Skeleton2D/Root/Right:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-55, 1)]
+"values": [Vector2(56, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Skeleton2D/Root/Right:position")
+tracks/2/path = NodePath("Body/Skeleton2D/Root/Up:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(56, 1)]
+"values": [Vector2(1, -53)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body/Skeleton2D/Root/Up:position")
+tracks/3/path = NodePath("Body/Skeleton2D/Root/Down:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -53)]
+"values": [Vector2(1, 53)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Skeleton2D/Root/Down:position")
+tracks/4/path = NodePath("Body/Polygon2D:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 53)]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_nk6av"]
@@ -562,14 +550,18 @@ _data = {
 }
 
 [node name="BaseCell" type="RigidBody2D"]
+position = Vector2(0, 1)
 scale = Vector2(1.2, 1.2)
+mass = 0.35
 physics_material_override = SubResource("PhysicsMaterial_dueqp")
+lock_rotation = true
 script = ExtResource("1_5q3au")
+cell_angular_limit = 0.1
 
 [node name="Body" type="Node2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="Body"]
-position = Vector2(-64, -64)
+offset = Vector2(-64, -64)
 texture = ExtResource("1_qgmso")
 skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(64.22, 7.0456, 79.6329, 7.92633, 91.9631, 12.1832, 101.211, 18.9355, 110.165, 27.4493, 117.504, 38.8988, 122.055, 51.2291, 124.257, 64.1465, 121.908, 77.3575, 117.945, 88.6603, 111.192, 99.3759, 103.119, 107.596, 93.5778, 114.055, 80.0732, 118.752, 64.22, 120.367, 49.5411, 118.605, 38.2383, 115.229, 26.0549, 106.715, 16.8072, 97.4676, 9.46771, 85.4309, 6.09156, 73.2474, 5.35762, 64.1465, 6.67872, 52.2566, 10.7888, 39.1924, 18.7154, 27.8896, 27.0824, 18.7887, 39.7062, 11.7428, 50.7154, 7.77954, 64.2779, 40.2105, 64.1293, 88.2247, 40.0478, 63.9946, 90.8864, 63.9946, 49.5615, 46.7511, 81.0755, 50.1701, 80.4809, 78.5624, 47.7777, 78.2651)
@@ -606,3 +598,8 @@ shape = SubResource("CircleShape2D_pwhqo")
 libraries = {
 "": SubResource("AnimationLibrary_uo7u7")
 }
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+angular_limit_enabled = true
+angular_limit_lower = 0.00174533
+angular_limit_upper = 0.00174533

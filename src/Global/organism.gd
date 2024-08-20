@@ -64,10 +64,11 @@ func right(coords: Vector2) -> Variant:
 	return self.move(coords, Constants.DIR.RIGHT)
 
 func each(method_name: String, arg: Variant, exclude: Array = []) -> void:
-	for y in range(self.structure.size()):
-		var row: Array = self.structure[y]
+	var structure: Array[Array] = self.structure.duplicate(true)
+	for y in range(structure.size()):
+		var row: Array = structure[y]
 		for x in range(row.size()):
-			var obj = self.structure[y][x]
+			var obj = structure[y][x]
 			if not obj or obj is int:
 				continue
 			if not obj.has_method(method_name):

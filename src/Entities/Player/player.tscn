@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c4fulvnw3bqsp" path="res://Entities/Camera/camera.tscn" id="3_rexji"]
 
 [node name="Player" instance=ExtResource("1_5t4n2")]
-lock_rotation = true
+mass = 1.0
+angular_damp = 2.0
 script = ExtResource("1_kex5a")
-speed = 300
 
 [node name="ZoomingCamera" parent="." index="3" instance=ExtResource("3_rexji")]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6wvf6h4pdrhb"]
+[gd_scene load_steps=3 format=3 uid="uid://c6wvf6h4pdrhb"]
 
 [ext_resource type="Script" path="res://Levels/Level1/level1.gd" id="1_x7qn3"]
+[ext_resource type="PackedScene" uid="uid://ba1dfw1kavie7" path="res://Entities/PowerUps/Energy/energy.tscn" id="2_j3mfy"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("start")]
 script = ExtResource("1_x7qn3")
@@ -8,3 +9,426 @@ start = NodePath("Start")
 
 [node name="Start" type="Node2D" parent="."]
 position = Vector2(110, 310)
+
+[node name="PowerUps" type="Node2D" parent="."]
+
+[node name="BasePowerup" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(283, 500)
+
+[node name="BasePowerup2" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(263, 157)
+
+[node name="BasePowerup3" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(934, 98)
+
+[node name="BasePowerup4" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+z_index = -10
+position = Vector2(987, 576)
+
+[node name="Energy" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(323, 338)
+
+[node name="Energy2" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(560, 539)
+
+[node name="Energy3" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(642, 129)
+
+[node name="Energy4" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(648, 333)
+
+[node name="Energy5" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(741, 477)
+
+[node name="Energy6" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(473, 152)
+
+[node name="Energy7" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(125, 514)
+
+[node name="Energy8" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(147, 296)
+
+[node name="Energy9" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(145, 95)
+
+[node name="Energy10" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(965, 398)
+
+[node name="Energy11" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(996, 177)
+
+[node name="Energy12" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(812, 296)
+
+[node name="Energy13" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(770, 143)
+
+[node name="Energy14" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(490, 389)
+
+[node name="Energy15" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(444, 254)
+
+[node name="Energy16" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(411, 491)
+
+[node name="Energy17" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(368, 58)
+
+[node name="Energy18" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(798, 24)
+
+[node name="Energy19" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-166, 664)
+
+[node name="Energy20" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(150, 763)
+
+[node name="Energy21" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(357, 751)
+
+[node name="Energy22" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-84, 525)
+
+[node name="Energy23" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-121, 321)
+
+[node name="Energy24" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-53, 746)
+
+[node name="Energy25" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-73, 109)
+
+[node name="Energy26" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(600, 695)
+
+[node name="Energy27" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(408, 695)
+
+[node name="Energy28" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(498, 729)
+
+[node name="Energy29" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(744, 686)
+
+[node name="Energy30" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(232, 675)
+
+[node name="Energy31" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(3, 369)
+
+[node name="Energy32" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(15, 163)
+
+[node name="Energy33" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(798, 763)
+
+[node name="Energy34" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(674, 822)
+
+[node name="Energy35" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(396, 848)
+
+[node name="Energy36" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(252, 850)
+
+[node name="Energy37" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(57, 842)
+
+[node name="Energy38" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-223, 423)
+
+[node name="Energy39" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(999, 681)
+
+[node name="Energy40" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(993, 737)
+
+[node name="Energy41" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1253, 440)
+
+[node name="Energy42" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1276, 539)
+
+[node name="Energy43" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1268, 650)
+
+[node name="Energy44" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1115, 497)
+
+[node name="Energy45" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1251, 177)
+
+[node name="Energy46" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1318, 296)
+
+[node name="Energy47" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1251, 2)
+
+[node name="Energy48" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1115, 67)
+
+[node name="Energy49" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1123, 669)
+
+[node name="Energy50" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1118, 760)
+
+[node name="Energy51" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1236, 723)
+
+[node name="Energy52" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(948, -1)
+
+[node name="Energy53" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1086, -63)
+
+[node name="Energy54" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(608, -1)
+
+[node name="Energy55" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(405, -75)
+
+[node name="Energy56" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(227, -89)
+
+[node name="Energy57" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(54, -157)
+
+[node name="Energy58" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-31, -80)
+
+[node name="Energy59" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-135, 44)
+
+[node name="Energy60" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-121, 203)
+
+[node name="Energy61" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-254, 191)
+
+[node name="Energy62" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-198, 27)
+
+[node name="Energy63" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-200, -140)
+
+[node name="Energy64" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(886, -111)
+
+[node name="Energy65" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(702, -125)
+
+[node name="Energy66" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(526, -142)
+
+[node name="Energy67" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(328, -168)
+
+[node name="Energy68" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-127, -159)
+
+[node name="Energy69" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-297, -145)
+
+[node name="Energy70" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-229, 58)
+
+[node name="Energy71" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-322, 118)
+
+[node name="Energy72" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-359, 251)
+
+[node name="Energy73" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-339, -38)
+
+[node name="Energy74" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-285, 324)
+
+[node name="Energy75" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-268, 471)
+
+[node name="Energy76" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-305, 559)
+
+[node name="Energy77" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-308, 698)
+
+[node name="Energy78" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-314, 819)
+
+[node name="Energy79" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-189, 765)
+
+[node name="Energy80" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-161, 876)
+
+[node name="Energy81" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(116, 873)
+
+[node name="Energy82" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(459, 867)
+
+[node name="Energy83" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(580, 853)
+
+[node name="Energy84" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(761, 873)
+
+[node name="Energy85" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(889, 887)
+
+[node name="Energy86" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(922, 763)
+
+[node name="Energy87" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1019, 873)
+
+[node name="Energy88" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1191, 884)
+
+[node name="Energy89" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1166, 780)
+
+[node name="Energy90" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1316, 910)
+
+[node name="Energy91" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1299, 763)
+
+[node name="Energy92" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1205, 276)
+
+[node name="Energy93" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1316, 53)
+
+[node name="Energy94" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1180, -106)
+
+[node name="Energy95" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1276, -159)
+
+[node name="Energy96" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1019, -145)
+
+[node name="Energy97" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(812, -154)
+
+[node name="Energy98" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(193, -193)
+
+[node name="Energy99" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-70, -174)
+
+[node name="Energy100" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(15, 760)
+
+[node name="Energy101" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1180, 531)
+
+[node name="Energy102" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-206, 536)
+
+[node name="Energy103" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-104, 415)
+
+[node name="Energy104" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1137, 350)
+
+[node name="Energy105" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(572, -94)
+
+[node name="Energy106" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(102, -103)
+
+[node name="Energy107" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-150, -89)
+
+[node name="Energy108" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(758, -77)
+
+[node name="Energy109" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1211, 126)
+
+[node name="Energy110" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1163, 208)
+
+[node name="Energy111" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-118, 610)
+
+[node name="Energy112" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-243, 618)
+
+[node name="Energy113" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-249, 780)
+
+[node name="Energy114" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(354, -97)
+
+[node name="Energy115" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(241, 751)
+
+[node name="Energy116" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1222, 369)
+
+[node name="Energy117" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(996, -103)
+
+[node name="Energy118" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-271, 907)
+
+[node name="Energy119" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1225, 828)
+
+[node name="Energy120" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1262, -83)
+
+[node name="Energy121" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(213, -157)
+
+[node name="Energy122" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(642, -162)
+
+[node name="Energy123" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(439, -162)
+
+[node name="Energy124" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1169, -174)
+
+[node name="Energy125" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-263, -69)
+
+[node name="Energy126" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-316, -131)
+
+[node name="Energy127" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-215, 254)
+
+[node name="Energy128" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-147, 437)
+
+[node name="Energy129" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-42, 884)
+
+[node name="Energy130" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(-87, 816)
+
+[node name="Energy131" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(312, 884)
+
+[node name="Energy132" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(563, 765)
+
+[node name="Energy133" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(682, 740)
+
+[node name="Energy134" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(693, 879)
+
+[node name="Energy135" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1064, 825)
+
+[node name="Energy136" parent="PowerUps" instance=ExtResource("2_j3mfy")]
+position = Vector2(1299, 389)

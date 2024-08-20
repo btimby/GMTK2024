@@ -12,7 +12,6 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is not BaseCell:
 		return
-	var cell: BaseCell = body
 	if self.give_energy:
-		cell.add_energy(self.give_energy)
+		GameState.player.add_energy(self.give_energy)
 	self.get_parent().queue_free()

@@ -18,18 +18,16 @@ const SWIM_ANIMATIONS = {
 @onready var cell_scene: PackedScene = preload("res://Entities/Cells/BaseCell/base_cell.tscn")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var pin: PinJoint2D = $PinJoint2D
 
-var energy: int = 0
-var next_growth: int = 100
 var growing: bool = false
 var coords: Vector2
 
-static func Create(parent: Node2D, coords: Vector2, position: Vector2) -> BaseCell:
+static func Create(coords: Vector2) -> BaseCell:
 	var cell_scene: PackedScene = preload("res://Entities/Cells/BaseCell/base_cell.tscn")
 	var cell: BaseCell = cell_scene.instantiate()
-	parent.add_child(cell)
+	# parent.add_child(cell)
 	cell.coords = coords
-	cell.position = position
 	return cell
 
 func _ready():
@@ -55,33 +53,35 @@ func _find_direction(dir: Constants.DIR = Constants.DIR.NONE) -> Constants.DIR:
 			return d
 	return Constants.DIR.NONE
 
-func _add_cell(dir: Constants.DIR) -> void:
-	#var cell: BaseCell = cell_scene.instantiate()
+func _create_cell(dir: Constants.DIR) -> BaseCell:
 	var new_coords: Vector2 = GameState.organism.move(self.coords, dir)
-	var new_position = self.position + Constants.DIR_VECTORS[dir] * self.grow_distance
-	var cell: BaseCell = BaseCell.Create(self.get_parent(), new_coords, new_position)
+	var cell: BaseCell = BaseCell.Create(new_coords)
 	GameState.organism.insert(new_coords, cell)
-	var pin: PinJoint2D = PinJoint2D.new()
-	pin.node_a = self.get_path()
-	pin.node_b = cell.get_path()
-	pin.angular_limit_enabled = true
-	pin.angular_limit_lower = -self.cell_angular_limit
-	pin.angular_limit_upper = self.cell_angular_limit
-	self.add_child(pin)
+	return cell
+	
+func _add_cell(cell: BaseCell, dir: Constants.DIR) -> void:
+	self.get_parent().add_child(cell)
+	cell.global_position = self.global_position + Constants.DIR_VECTORS[dir] * self.grow_distance
+	cell.pin.node_a = self.get_path()
+	cell.pin.node_b = cell.get_path()
+	cell.pin.global_position = self.global_position
 
 func _grow(dir: Constants.DIR, progress: Progress) -> void:
 	progress.total += 1
+	var was_growing: bool = self.growing
 	self.growing = true
 #	var margin: CollisionShape2D = CollisionShape2D.new()
 #	var shape: CircleShape2D = CircleShape2D.new()
 #	shape.radius = 112
 #	margin.shape = shape
 #	self.add_child(margin)
-	self.animation_player.current_animation = 'PreGrow'
+	var cell: BaseCell = self._create_cell(dir)
+	if not was_growing:
+		self.animation_player.current_animation = 'PreGrow'
 	await self.animation_player.animation_finished
 	self.growing = false
 #	self.remove_child(margin)
-	self._add_cell(dir)
+	self._add_cell(cell, dir)
 	self.animation_player.current_animation = 'Idle'
 	progress.complete()
 
@@ -91,6 +91,3 @@ func grow(progress: Progress) -> void:
 		if GameState.level.organism.is_open(self.coords, dir):
 			self._grow(dir, progress)
 			return
-
-func add_energy(amount: int) -> void:
-	GameState.player.add_energy(amount)
