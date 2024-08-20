@@ -24,6 +24,8 @@ static func Create(coords: Vector2) -> Player:
 func _ready():
 	self.energy = 0
 	self.generation = 1
+	# NOTE: Not used by player
+	self.joint.queue_free()
 
 func _physics_process(delta: float) -> void:
 	var rotation: float = 0.0
@@ -32,15 +34,21 @@ func _physics_process(delta: float) -> void:
 	self.apply_force(velocity)
 	self._swim_animation(direction)
 
+func _next_generation():
+	self.energy = 0
+	self.generation += 1
+	self.next_growth *= 1.2
+
+func _grow():
+	GameState.before_growth.emit()
+	var progress: Progress = Progress.Create()
+	GameState.organism.each('split', progress)
+	await progress.completion
+	GameState.after_growth.emit(self.next_growth)
+
 func add_energy(amount: int) -> void:
-	self.energy += amount
-	GameState.energy_changed.emit(self.energy)
-	if self.energy >= self.next_growth:
-		self.energy = self.energy - self.next_growth
-		self.generation += 1
-		self.next_growth *= 1.2
-		GameState.before_growth.emit()
-		var progress: Progress = Progress.Create()
-		GameState.organism.each('grow', progress)
-		await progress.completion
-		GameState.after_growth.emit(self.next_growth)
+	self.energy += clamp(amount, 0, self.next_growth)
+	if self.energy < self.next_growth:
+		return
+	self._next_generation()
+	self._grow()

@@ -12,7 +12,5 @@ static func Create(total: int = 0) -> Progress:
 
 func complete(count: int = 1) -> void:
 	self.completed += count
-	print(self.completed, 'of', self.total)
 	if self.completed >= self.total:
-		print('signalling completion')
 		self.completion.emit()

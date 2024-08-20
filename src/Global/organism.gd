@@ -18,19 +18,15 @@ func _check_coords(coords: Vector2) -> bool:
 
 func find(slot: Constants.SLOT) -> Vector2:
 	for y in range(self.structure.size()):
-		var row: Array = structure[y]
-		for x in range(row.size()):
-			if row[x] == slot:
+		for x in range(self.structure[y].size()):
+			if self.structure[y][x] == slot:
 				return Vector2(x, y)
 	return Vector2.INF
 
 func insert(coords: Vector2, obj: Variant) -> bool:
 	if not self._check_coords(coords):
 		return false
-	var row: Array = self.structure[coords.y]
-	if row[coords.x] not in Constants.OPEN_SLOTS:
-		return false
-	row[coords.x] = obj
+	self.structure[coords.y][coords.x] = obj
 	return true
 
 func inspect(coords: Vector2) -> Variant:
@@ -64,10 +60,11 @@ func right(coords: Vector2) -> Variant:
 	return self.move(coords, Constants.DIR.RIGHT)
 
 func each(method_name: String, arg: Variant, exclude: Array = []) -> void:
+	# NOTE: we clone structure so that it does not change during whatever
+	# call we are making to each object.
 	var structure: Array[Array] = self.structure.duplicate(true)
 	for y in range(structure.size()):
-		var row: Array = structure[y]
-		for x in range(row.size()):
+		for x in range(structure[y].size()):
 			var obj = structure[y][x]
 			if not obj or obj is int:
 				continue
@@ -79,8 +76,7 @@ func each(method_name: String, arg: Variant, exclude: Array = []) -> void:
 
 func is_complete() -> bool:
 	for y in range(self.structure.size()):
-		var row: Array = self.structure[y]
-		for x in range(row.size()):
+		for x in range(self.structure[y].size()):
 			if self.is_open(Vector2(x, y)):
 				return false
 	return true

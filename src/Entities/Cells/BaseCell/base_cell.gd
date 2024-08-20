@@ -13,12 +13,12 @@ const SWIM_ANIMATIONS = {
 
 @export var speed: int = 2400
 @export var grow_distance: int = 104
-@export var cell_angular_limit: float = 0.2
 
 @onready var cell_scene: PackedScene = preload("res://Entities/Cells/BaseCell/base_cell.tscn")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var pin: PinJoint2D = $PinJoint2D
+#@onready var joint: PinJoint2D = $PinJoint2D
+@onready var joint: DampedSpringJoint2D = $DampedSpringJoint2D
 
 var growing: bool = false
 var coords: Vector2
@@ -56,17 +56,19 @@ func _find_direction(dir: Constants.DIR = Constants.DIR.NONE) -> Constants.DIR:
 func _create_cell(dir: Constants.DIR) -> BaseCell:
 	var new_coords: Vector2 = GameState.organism.move(self.coords, dir)
 	var cell: BaseCell = BaseCell.Create(new_coords)
-	GameState.organism.insert(new_coords, cell)
+	GameState.organism.insert(new_coords, Constants.SLOT.NONE)
 	return cell
 	
 func _add_cell(cell: BaseCell, dir: Constants.DIR) -> void:
 	self.get_parent().add_child(cell)
 	cell.global_position = self.global_position + Constants.DIR_VECTORS[dir] * self.grow_distance
-	cell.pin.node_a = self.get_path()
-	cell.pin.node_b = cell.get_path()
-	cell.pin.global_position = self.global_position
+	var joint: DampedSpringJoint2D = DampedSpringJoint2D.new()
+	cell.joint.node_a = self.get_path()
+	cell.joint.node_b = cell.get_path()
+	cell.joint.global_position = self.global_position
+	GameState.organism.insert(cell.coords, cell)
 
-func _grow(dir: Constants.DIR, progress: Progress) -> void:
+func _split(dir: Constants.DIR, progress: Progress) -> void:
 	progress.total += 1
 	var was_growing: bool = self.growing
 	self.growing = true
@@ -77,7 +79,7 @@ func _grow(dir: Constants.DIR, progress: Progress) -> void:
 #	self.add_child(margin)
 	var cell: BaseCell = self._create_cell(dir)
 	if not was_growing:
-		self.animation_player.current_animation = 'PreGrow'
+		self.animation_player.current_animation = 'PreSplit'
 	await self.animation_player.animation_finished
 	self.growing = false
 #	self.remove_child(margin)
@@ -85,9 +87,9 @@ func _grow(dir: Constants.DIR, progress: Progress) -> void:
 	self.animation_player.current_animation = 'Idle'
 	progress.complete()
 
-func grow(progress: Progress) -> void:
+func split(progress: Progress) -> void:
 	var to_grow: Array[BaseCell] = []
 	for dir in [Constants.DIR.UP, Constants.DIR.RIGHT, Constants.DIR.DOWN, Constants.DIR.LEFT]:
 		if GameState.level.organism.is_open(self.coords, dir):
-			self._grow(dir, progress)
+			self._split(dir, progress)
 			return

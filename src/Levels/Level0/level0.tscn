@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4jtvni05txtf"]
+[gd_scene load_steps=9 format=3 uid="uid://c4jtvni05txtf"]
 
 [ext_resource type="Script" path="res://Levels/Level0/level0.gd" id="2_vxbn8"]
 [ext_resource type="Script" path="res://Levels/Level0/parallax_background.gd" id="3_7vspa"]
@@ -7,13 +7,14 @@
 [ext_resource type="AudioStream" uid="uid://b013xl05vd7sb" path="res://Music/Fresh Decision C Minor 120bpm.wav" id="6_b735i"]
 [ext_resource type="Script" path="res://Levels/Level0/audio_stream_player.gd" id="7_5lqlq"]
 [ext_resource type="PackedScene" uid="uid://ba1dfw1kavie7" path="res://Entities/PowerUps/Energy/energy.tscn" id="7_jiikg"]
+[ext_resource type="PackedScene" uid="uid://cavhte35x8l24" path="res://Entities/Enemies/Bacteria/bacteria.tscn" id="8_4jwsr"]
 
 [node name="Level0" type="Node2D" node_paths=PackedStringArray("start")]
 script = ExtResource("2_vxbn8")
 start = NodePath("Start")
 
 [node name="Start" type="Node2D" parent="."]
-position = Vector2(1090, 317)
+position = Vector2(982, 293)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_b735i")
@@ -461,3 +462,14 @@ position = Vector2(1064, 825)
 
 [node name="Energy136" parent="PowerUps" instance=ExtResource("7_jiikg")]
 position = Vector2(1299, 389)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Bacteria" parent="Enemies" instance=ExtResource("8_4jwsr")]
+position = Vector2(209, 399)
+
+[node name="Bacteria2" parent="Enemies" instance=ExtResource("8_4jwsr")]
+position = Vector2(360, 118)
+
+[node name="Bacteria3" parent="Enemies" instance=ExtResource("8_4jwsr")]
+position = Vector2(434, 441)

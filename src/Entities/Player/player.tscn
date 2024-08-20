@@ -6,6 +6,7 @@
 
 [node name="Player" instance=ExtResource("1_5t4n2")]
 mass = 1.0
+lock_rotation = true
 angular_damp = 2.0
 script = ExtResource("1_kex5a")
 
