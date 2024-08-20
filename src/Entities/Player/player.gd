@@ -47,7 +47,10 @@ func _grow():
 	GameState.after_growth.emit(self.next_growth)
 
 func add_energy(amount: int) -> void:
-	self.energy += clamp(amount, 0, self.next_growth)
+	self.energy = clamp(self.energy + amount, 0, self.next_growth)
+	if self.energy == 0:
+		GameState.player_died.emit()
+		return
 	if self.energy < self.next_growth:
 		return
 	self._next_generation()

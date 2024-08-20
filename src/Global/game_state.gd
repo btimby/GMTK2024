@@ -6,6 +6,7 @@ signal before_growth
 signal after_growth
 signal next_growth_changed
 signal generation_changed
+signal player_died
 
 # Global state
 var level_num: int = -1

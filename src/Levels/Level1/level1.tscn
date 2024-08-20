@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6wvf6h4pdrhb"]
+[gd_scene load_steps=4 format=3 uid="uid://ba774l7jdb47a"]
 
 [ext_resource type="Script" path="res://Levels/Level1/level1.gd" id="1_x7qn3"]
 [ext_resource type="PackedScene" uid="uid://ba1dfw1kavie7" path="res://Entities/PowerUps/Energy/energy.tscn" id="2_j3mfy"]
+[ext_resource type="PackedScene" uid="uid://cavhte35x8l24" path="res://Entities/Enemies/Bacteria/bacteria.tscn" id="3_edwco"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("start")]
 script = ExtResource("1_x7qn3")
@@ -432,3 +433,29 @@ position = Vector2(1064, 825)
 
 [node name="Energy136" parent="PowerUps" instance=ExtResource("2_j3mfy")]
 position = Vector2(1299, 389)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Bacteria" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(113, 600)
+
+[node name="Bacteria2" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(1065, 602)
+
+[node name="Bacteria3" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(1339, 910)
+
+[node name="Bacteria4" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(1303, -55)
+
+[node name="Bacteria5" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(100, 59)
+
+[node name="Bacteria6" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(-311, -172)
+
+[node name="Bacteria7" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(-365, 856)
+
+[node name="Bacteria8" parent="Enemies" instance=ExtResource("3_edwco")]
+position = Vector2(605, 288)

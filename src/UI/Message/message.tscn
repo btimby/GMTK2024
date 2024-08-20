@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://2xysgm87jsp5"]
+
+[ext_resource type="Script" path="res://UI/Message/message.gd" id="1_6q4hd"]
+
+[sub_resource type="Theme" id="Theme_4dna7"]
+default_font_size = 40
+
+[node name="Message" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_6q4hd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Node2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Node2D/CenterContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4dna7")
+text = "You've Won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
