@@ -1,13 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4jtvni05txtf"]
+[gd_scene load_steps=11 format=3 uid="uid://c4jtvni05txtf"]
 
 [ext_resource type="Script" path="res://Levels/Level0/level0.gd" id="2_vxbn8"]
 [ext_resource type="Script" path="res://Levels/Level0/parallax_background.gd" id="3_7vspa"]
 [ext_resource type="Texture2D" uid="uid://dd3bbkg8javb1" path="res://Levels/Level0/Untitled.png" id="4_p0n5c"]
 [ext_resource type="Texture2D" uid="uid://dcblmulp2ffgb" path="res://Levels/Level0/bubbles.png" id="5_gwxc0"]
-[ext_resource type="AudioStream" uid="uid://b013xl05vd7sb" path="res://Music/Fresh Decision C Minor 120bpm.wav" id="6_b735i"]
-[ext_resource type="Script" path="res://Levels/Level0/audio_stream_player.gd" id="7_5lqlq"]
 [ext_resource type="PackedScene" uid="uid://ba1dfw1kavie7" path="res://Entities/PowerUps/Energy/energy.tscn" id="7_jiikg"]
 [ext_resource type="PackedScene" uid="uid://cavhte35x8l24" path="res://Entities/Enemies/Bacteria/bacteria.tscn" id="8_4jwsr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdqp4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cp6tx"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bpqq5"]
+normal = Vector2(1, 0)
+distance = 61.59
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v7lpk"]
+normal = Vector2(-1, 0)
 
 [node name="Level0" type="Node2D" node_paths=PackedStringArray("start")]
 script = ExtResource("2_vxbn8")
@@ -15,11 +25,6 @@ start = NodePath("Start")
 
 [node name="Start" type="Node2D" parent="."]
 position = Vector2(982, 293)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_b735i")
-autoplay = true
-script = ExtResource("7_5lqlq")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false
@@ -473,3 +478,30 @@ position = Vector2(360, 118)
 
 [node name="Bacteria3" parent="Enemies" instance=ExtResource("8_4jwsr")]
 position = Vector2(434, 441)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Walls"]
+position = Vector2(498, 936)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor"]
+shape = SubResource("WorldBoundaryShape2D_mdqp4")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls"]
+position = Vector2(602, -187)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling"]
+shape = SubResource("WorldBoundaryShape2D_cp6tx")
+
+[node name="Left" type="StaticBody2D" parent="Walls"]
+position = Vector2(-439, 348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left"]
+shape = SubResource("WorldBoundaryShape2D_bpqq5")
+
+[node name="Right" type="StaticBody2D" parent="Walls"]
+position = Vector2(1161, 354)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right"]
+position = Vector2(225, -10)
+shape = SubResource("WorldBoundaryShape2D_v7lpk")

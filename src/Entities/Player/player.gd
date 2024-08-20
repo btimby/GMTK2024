@@ -47,9 +47,15 @@ func _grow():
 	GameState.after_growth.emit(self.next_growth)
 
 func add_energy(amount: int) -> void:
+	print('Energy:', self.energy)
+	print('Amount:', amount)
 	self.energy = clamp(self.energy + amount, 0, self.next_growth)
+	print('Energy:', self.energy)
 	if self.energy == 0:
-		GameState.player_died.emit()
+		# Remove a cell
+		if not GameState.organism.remove():
+			# No cell to remove? Die then.
+			GameState.player_died.emit()
 		return
 	if self.energy < self.next_growth:
 		return

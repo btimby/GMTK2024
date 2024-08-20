@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfxxjv2qf5mba"]
+[gd_scene load_steps=9 format=3 uid="uid://dfxxjv2qf5mba"]
 
 [ext_resource type="Script" path="res://Global/main.gd" id="1_stbch"]
 [ext_resource type="PackedScene" uid="uid://dpy6hcsxuwgj5" path="res://UI/EnergyBar/energy_bar.tscn" id="2_sdymj"]
+[ext_resource type="AudioStream" uid="uid://b013xl05vd7sb" path="res://Music/Fresh Decision C Minor 120bpm.wav" id="3_xfu81"]
+[ext_resource type="Script" path="res://Levels/Level0/audio_stream_player.gd" id="4_n6ag2"]
 
 [sub_resource type="Animation" id="Animation_nfbse"]
 resource_name = "FadeIn"
@@ -73,3 +75,9 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_bpgja")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_xfu81")
+autoplay = true
+script = ExtResource("4_n6ag2")

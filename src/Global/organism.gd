@@ -29,6 +29,18 @@ func insert(coords: Vector2, obj: Variant) -> bool:
 	self.structure[coords.y][coords.x] = obj
 	return true
 
+func remove() -> bool:
+	for y in range(self.structure.size()):
+		for x in range(self.structure[y].size()):
+			var obj = self.structure[y][x]
+			if obj is Player:
+				continue
+			if obj is BaseCell:
+				self.structure[y][x] = Constants.SLOT.BASE
+				obj.queue_free()
+				return true
+	return false
+
 func inspect(coords: Vector2) -> Variant:
 	if not self._check_coords(coords):
 		return Constants.SLOT.NONE
